@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fill the Form</title>
+    <link rel="stylesheet" href="FillFormStyle.css">
+</head>
+<body>
+    <div id="id01" class="modal-sign">
+        <form class="modal-content" action="">
+            <div class="container">
+                <h4 class="sign-txt">Sign Up</h4>
+                <p>Fill in this form to create an account.</p>
+                <hr class="sign-hr">
+                <div class="box">
+                    <div class="name-col1">
+                        <label for="fname"><b>First Name</b></label>
+                        <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="name-col2">
+                        <label for="lname"><b>Last Name</b></label>
+                        <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required>
+                    </div>
+                </div>
+                <label for="user"><b>Username</b></label>
+                <input type="text" id="user" name="user" placeholder="Enter Username" required>
+                <label for="email"><b>Email</b></label>
+                <input type="text" id="email" name="email" placeholder="Enter Email" required>
+                <label for="pass"><b>Password</b></label>
+                <input type="password" id="pass" name="pass" placeholder="Enter Password" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                <div class="clearfix">
+                    <div class="box">
+                        <div class="left-col">
+                            <button id="log" type="button" class="cancel-btn">Log In Instead</button>
+                        </div>
+                        <div class="right-col">
+                            <button id="signed" type="submit" class="conf-btn">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="id02" class="modal-log">
+        <form class="modal-content" action="">
+            <div class="container">
+                <h4 class="sign-txt">Login</h4>
+                <p>Fill in this form to log into your account.</p>
+                <hr class="sign-hr">
+                <label for="email"><b>Email</b></label>
+                <input type="text" id="email" name="email" placeholder="Enter Email" required>
+                <label for="pass"><b>Password</b></label>
+                <input type="password" id="pass" name="pass" placeholder="Enter Password" required>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+                <div class="clearfix">
+                    <div class="box">
+                        <div class="left-col">
+                            <button id="sign" type="button" class="cancel-btn">Sign Up Instead</button>
+                        </div>
+                        <div class="right-col">
+                            <button id="logged" type="submit" class="conf-btn">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('log').addEventListener('click', function() {
+            document.getElementById('id02').style.display = 'block';
+            document.getElementById('id01').style.display = 'none';  
+        });
+        document.getElementById('sign').addEventListener('click', function() {
+            document.getElementById('id01').style.display = 'block';
+            document.getElementById('id02').style.display = 'none';
+        });
+        document.getElementById("logged").onclick = function() {
+            alert("Log In Successful!");
+            event.preventDefault();           
+        };
+        document.getElementById("signed").onclick = function() {
+            alert("Sign Up Successful!");
+            document.getElementById('id01').style.display = 'block';
+            document.getElementById('id02').style.display = 'none';            
+        };        
+    </script>
+</body>
+</html>
